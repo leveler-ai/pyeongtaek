@@ -1,0 +1,1076 @@
+# -*- coding: utf-8 -*-
+"""
+Neo-Brutalism 스타일 인포그래픽 대시보드 HTML 생성 모듈
+(design-neo-dashboard 스킬 디자인 토큰 및 규칙 엄격 준수)
+"""
+
+import json
+from datetime import datetime
+from .financial_calc import calculate_finance_for_item, format_krw
+
+def generate_dashboard_html(articles, diff_info, output_path, default_deposit=800000000, default_yield=10.0):
+    """
+    네오 브루탈리즘 스타일의 인터랙티브 단일 HTML 대시보드 생성
+    """
+    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # 각 매물에 초기 재무 계산 데이터 주입
+    for item in articles:
+        fin = calculate_finance_for_item(item['deposit'], item['monthlyRent'], default_deposit, default_yield)
+        item.update(fin)
+        
+    articles_json = json.dumps(articles, ensure_ascii=False)
+    diff_events_json = json.dumps(diff_info.get('events', []), ensure_ascii=False)
+    
+    # 단지별 카운트
+    complex_stats = {}
+    for item in articles:
+        cname = item['complexName']
+        complex_stats[cname] = complex_stats.get(cname, 0) + 1
+        
+    jeonse_count = sum(1 for a in articles if a['tradeType'] == 'B1')
+    wolse_count = sum(1 for a in articles if a['tradeType'] == 'B2')
+    
+    html_content = f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>평택 이사 매물 모니터링 & 투자수익 대시보드</title>
+<style>
+/* ==========================================================================
+   NEO-BRUTALISM DESIGN SYSTEM (design-neo-dashboard)
+   ========================================================================== */
+:root {{
+  --neo-bg-page: #FDFBF7;
+  --neo-bg-card: #FFFFFF;
+  --neo-bg-subtle: #F4EFE6;
+  
+  --neo-border: 3px solid #121212;
+  --neo-border-thin: 2px solid #121212;
+  --neo-shadow: 5px 5px 0px #121212;
+  --neo-shadow-sm: 3px 3px 0px #121212;
+  --neo-shadow-hover: 7px 7px 0px #121212;
+  
+  --neo-yellow: #FFE600;
+  --neo-orange: #FF5C00;
+  --neo-mint: #00D084;
+  --neo-pink: #FF3366;
+  --neo-cyan: #00E5FF;
+  --neo-purple: #9D4EDD;
+  
+  --neo-text-main: #121212;
+  --neo-text-muted: #555555;
+  
+  --font-base: system-ui, -apple-system, 'Pretendard', 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}}
+
+*, *::before, *::after {{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}}
+
+body {{
+  background-color: var(--neo-bg-page);
+  color: var(--neo-text-main);
+  font-family: var(--font-base);
+  line-height: 1.5;
+  padding: 24px 16px;
+  -webkit-font-smoothing: antialiased;
+}}
+
+h1, h2, h3, h4, p, span, div, a, label, button, input {{
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}}
+
+.neo-container {{
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}}
+
+/* [모듈 A] 팝 옐로우 헤더 배너 & 스티커 뱃지 */
+.neo-header {{
+  background: var(--neo-yellow);
+  border: var(--neo-border);
+  border-radius: 14px;
+  box-shadow: var(--neo-shadow);
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}}
+
+.header-left {{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}}
+
+.header-title-row {{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}}
+
+.neo-header h1 {{
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}}
+
+.neo-header p {{
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}}
+
+.sticker-badge {{
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 900;
+  border: var(--neo-border-thin);
+  border-radius: 6px;
+  box-shadow: var(--neo-shadow-sm);
+  text-transform: uppercase;
+  white-space: nowrap;
+}}
+
+.sticker-badge.rotate {{ transform: rotate(-2deg); }}
+.sticker-badge.rotate-rev {{ transform: rotate(2deg); }}
+.sticker-badge.yellow {{ background: var(--neo-yellow); color: #121212; }}
+.sticker-badge.orange {{ background: var(--neo-orange); color: #FFFFFF; }}
+.sticker-badge.mint {{ background: var(--neo-mint); color: #121212; }}
+.sticker-badge.pink {{ background: var(--neo-pink); color: #FFFFFF; }}
+.sticker-badge.cyan {{ background: var(--neo-cyan); color: #121212; }}
+.sticker-badge.purple {{ background: var(--neo-purple); color: #FFFFFF; }}
+
+/* [모듈 C] 빅 넘버 KPI 카드 그리드 */
+.kpi-grid {{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}}
+
+.neo-kpi-card {{
+  background: var(--neo-bg-card);
+  border: var(--neo-border);
+  border-radius: 12px;
+  box-shadow: var(--neo-shadow);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}}
+
+.kpi-header {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}}
+
+.kpi-title {{
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--neo-text-muted);
+}}
+
+.kpi-value {{
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--neo-text-main);
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}}
+
+.kpi-desc {{
+  font-size: 12px;
+  font-weight: 700;
+  color: #444;
+}}
+
+/* 동적 금융 시뮬레이터 패널 */
+.neo-simulator-card {{
+  background: var(--neo-cyan);
+  border: var(--neo-border);
+  border-radius: 14px;
+  box-shadow: var(--neo-shadow);
+  padding: 22px 26px;
+  margin-bottom: 24px;
+}}
+
+.simulator-header {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}}
+
+.simulator-header h2 {{
+  font-size: 18px;
+  font-weight: 900;
+}}
+
+.simulator-controls {{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}}
+
+.control-box {{
+  background: #FFFFFF;
+  border: var(--neo-border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: var(--neo-shadow-sm);
+}}
+
+.control-label-row {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}}
+
+.control-title {{
+  font-size: 14px;
+  font-weight: 800;
+}}
+
+.control-current-val {{
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--neo-orange);
+  font-family: var(--font-mono);
+}}
+
+.neo-range-slider {{
+  width: 100%;
+  height: 10px;
+  background: #E5E5E5;
+  border: 2px solid #121212;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}}
+
+.neo-range-slider::-webkit-slider-thumb {{
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--neo-yellow);
+  border: 2px solid #121212;
+  border-radius: 50%;
+  box-shadow: 2px 2px 0px #121212;
+  cursor: pointer;
+}}
+
+.neo-range-slider::-webkit-slider-thumb:hover {{
+  background: var(--neo-orange);
+}}
+
+/* 네오 탭 & 필터 툴바 */
+.neo-toolbar {{
+  background: var(--neo-bg-card);
+  border: var(--neo-border);
+  border-radius: 12px;
+  box-shadow: var(--neo-shadow);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}}
+
+.filter-row {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}}
+
+.button-group {{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}}
+
+.filter-btn {{
+  background: #FFFFFF;
+  border: var(--neo-border-thin);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--neo-shadow-sm);
+  transition: all 0.1s ease;
+}}
+
+.filter-btn:hover {{
+  transform: translate(-1px, -1px);
+  box-shadow: var(--neo-shadow);
+}}
+
+.filter-btn.active {{
+  background: var(--neo-yellow);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow);
+}}
+
+.sort-select {{
+  background: #FFFFFF;
+  border: var(--neo-border-thin);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: var(--neo-shadow-sm);
+  cursor: pointer;
+  outline: none;
+}}
+
+/* 매물 카드 리스트 그리드 */
+.property-grid {{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}}
+
+.neo-property-card {{
+  background: var(--neo-bg-card);
+  border: var(--neo-border);
+  border-radius: 12px;
+  box-shadow: var(--neo-shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.15s ease;
+  min-width: 0;
+}}
+
+.neo-property-card:hover {{
+  transform: translate(-2px, -2px);
+  box-shadow: var(--neo-shadow-hover);
+}}
+
+.card-top-row {{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}}
+
+.complex-info {{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}}
+
+.complex-name {{
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}}
+
+.dong-floor {{
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--neo-text-muted);
+}}
+
+.price-box {{
+  margin: 12px 0;
+  background: var(--neo-bg-subtle);
+  border: var(--neo-border-thin);
+  border-radius: 8px;
+  padding: 12px 14px;
+}}
+
+.price-main {{
+  font-size: 24px;
+  font-weight: 900;
+  color: #121212;
+  letter-spacing: -0.5px;
+}}
+
+.area-sub {{
+  font-size: 12px;
+  font-weight: 700;
+  color: #666;
+  margin-top: 2px;
+}}
+
+/* 네오 투자 시뮬레이션 계산 결과 박스 */
+.calc-result-box {{
+  background: #FFFDF9;
+  border: 2px dashed #121212;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}}
+
+.calc-row {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}}
+
+.calc-label {{
+  font-weight: 700;
+  color: #555;
+}}
+
+.calc-val {{
+  font-weight: 900;
+  font-family: var(--font-mono);
+}}
+
+.calc-val.profit {{
+  color: #00875A;
+  font-size: 14px;
+}}
+
+.calc-val.highlight {{
+  background: var(--neo-yellow);
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid #121212;
+}}
+
+.card-features {{
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  height: 34px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}}
+
+.card-footer {{
+  border-top: 2px solid #EAEAEA;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}}
+
+.realtor-summary {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 800;
+}}
+
+.dup-toggle-btn {{
+  background: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 800;
+  color: #0052CC;
+  text-decoration: underline;
+  cursor: pointer;
+}}
+
+.btn-naver-link {{
+  display: block;
+  text-align: center;
+  background: var(--neo-mint);
+  color: #121212;
+  border: var(--neo-border-thin);
+  border-radius: 8px;
+  padding: 9px 0;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: var(--neo-shadow-sm);
+  transition: all 0.1s ease;
+}}
+
+.btn-naver-link:hover {{
+  transform: translate(-1px, -1px);
+  box-shadow: var(--neo-shadow);
+  background: #00E695;
+}}
+
+/* 중개사 목록 아코디언 드롭다운 */
+.dup-list-container {{
+  display: none;
+  background: #FAFAFA;
+  border: 1.5px solid #121212;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-top: 6px;
+  font-size: 11px;
+  max-height: 140px;
+  overflow-y: auto;
+}}
+
+.dup-item {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px dotted #CCC;
+}}
+.dup-item:last-child {{ border-bottom: none; }}
+.dup-item a {{ color: #121212; font-weight: 700; text-decoration: none; }}
+.dup-item a:hover {{ text-decoration: underline; }}
+
+/* 변동 피드 섹션 */
+.diff-feed-section {{
+  display: none;
+  background: var(--neo-bg-card);
+  border: var(--neo-border);
+  border-radius: 14px;
+  box-shadow: var(--neo-shadow);
+  padding: 24px;
+  margin-bottom: 30px;
+}}
+
+.diff-feed-item {{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: var(--neo-border-thin);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #FFFFFF;
+}}
+
+.diff-feed-item.NEW {{ border-left: 8px solid var(--neo-mint); }}
+.diff-feed-item.PRICE_CHANGED {{ border-left: 8px solid var(--neo-orange); }}
+.diff-feed-item.REMOVED {{ border-left: 8px solid var(--neo-pink); opacity: 0.7; }}
+
+/* 푸터 */
+.neo-footer {{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--neo-text-muted);
+}}
+
+/* 반응형 모바일 브레이크포인트 */
+@media (max-width: 860px) {{
+  .kpi-grid {{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }}
+  .simulator-controls {{
+    grid-template-columns: 1fr;
+  }}
+}}
+
+@media (max-width: 480px) {{
+  .kpi-grid {{
+    grid-template-columns: 1fr;
+  }}
+  .property-grid {{
+    grid-template-columns: 1fr;
+  }}
+  .neo-header {{
+    padding: 16px;
+  }}
+  .neo-header h1 {{
+    font-size: 20px;
+  }}
+}}
+</style>
+</head>
+<body>
+
+<div class="neo-container">
+
+  <!-- [1] 팝 옐로우 헤더 배너 -->
+  <header class="neo-header">
+    <div class="header-left">
+      <div class="header-title-row">
+        <span class="sticker-badge orange rotate">★ LIVE RADAR</span>
+        <span class="sticker-badge yellow">평택 이사 프로젝트</span>
+      </div>
+      <h1>평택 네이버 부동산 모니터링 & 투자수익 대시보드</h1>
+      <p>관심 3개 단지 전·월세 실시간 추적 (전용 80㎡ 이상) · 현재 보증금 차액 기준 투자수익 시뮬레이터</p>
+    </div>
+    <div>
+      <span class="sticker-badge mint rotate-rev">마지막 갱신: {now_str}</span>
+    </div>
+  </header>
+
+  <!-- [2] 빅 넘버 KPI 카드 모듈 -->
+  <section class="kpi-grid">
+    <div class="neo-kpi-card">
+      <div class="kpi-header">
+        <span class="kpi-title">모니터링 대상 매물</span>
+        <span class="sticker-badge yellow">총 {len(articles)}개 단지</span>
+      </div>
+      <div class="kpi-value" id="kpi-total-articles">{len(articles)}<span style="font-size: 18px;">건</span></div>
+      <div class="kpi-desc">전세 {jeonse_count}건 / 월세 {wolse_count}건 (중복 묶음 적용)</div>
+    </div>
+    
+    <div class="neo-kpi-card">
+      <div class="kpi-header">
+        <span class="kpi-title">최대 가용 투자 원금</span>
+        <span class="sticker-badge cyan">차액 100%</span>
+      </div>
+      <div class="kpi-value" id="kpi-max-investment">-</div>
+      <div class="kpi-desc">현재 보증금 8억 - 최저 보증금 매물</div>
+    </div>
+    
+    <div class="neo-kpi-card">
+      <div class="kpi-header">
+        <span class="kpi-title">최고 예상 순수익 (연간)</span>
+        <span class="sticker-badge mint">연 10% 가정</span>
+      </div>
+      <div class="kpi-value" id="kpi-max-annual-gain" style="color: #00875A;">-</div>
+      <div class="kpi-desc" id="kpi-max-monthly-gain">월 환산 순수익: -</div>
+    </div>
+    
+    <div class="neo-kpi-card">
+      <div class="kpi-header">
+        <span class="kpi-title">최근 변동 알림</span>
+        <span class="sticker-badge pink">DIFF EVENT</span>
+      </div>
+      <div class="kpi-value" style="color: var(--neo-pink);">{len(diff_info.get('events', []))}<span style="font-size: 18px;">건</span></div>
+      <div class="kpi-desc">신규 {diff_info.get('newCount', 0)}건 · 가격변동 {diff_info.get('priceChangeCount', 0)}건</div>
+    </div>
+  </section>
+
+  <!-- [3] 동적 금융 시뮬레이터 Bar -->
+  <section class="neo-simulator-card">
+    <div class="simulator-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span class="sticker-badge yellow">⚡ 실시간 인터랙션</span>
+        <h2>주거비 차액 투자금 & 예상수익금 동적 시뮬레이터</h2>
+      </div>
+      <span style="font-size: 12px; font-weight: 800; color: #222;">슬라이더를 움직이면 아래 모든 매물의 수익금이 실시간 계산됩니다</span>
+    </div>
+    
+    <div class="simulator-controls">
+      <div class="control-box">
+        <div class="control-label-row">
+          <span class="control-title">현재 보유 전세보증금</span>
+          <span class="control-current-val" id="val-disp-deposit">8억 0,000만 원</span>
+        </div>
+        <input type="range" class="neo-range-slider" id="input-current-deposit" min="400000000" max="1200000000" step="10000000" value="{default_deposit}">
+        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #777; margin-top: 6px;">
+          <span>4억 원</span>
+          <span>8억 원 (기본)</span>
+          <span>12억 원</span>
+        </div>
+      </div>
+      
+      <div class="control-box">
+        <div class="control-label-row">
+          <span class="control-title">목표 투자 연 수익률</span>
+          <span class="control-current-val" id="val-disp-yield">연 {default_yield:.1f}%</span>
+        </div>
+        <input type="range" class="neo-range-slider" id="input-annual-yield" min="3.0" max="25.0" step="0.5" value="{default_yield}">
+        <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #777; margin-top: 6px;">
+          <span>3.0%</span>
+          <span>10.0% (기본)</span>
+          <span>25.0%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- [4] 필터 & 툴바 -->
+  <section class="neo-toolbar">
+    <div class="filter-row">
+      <div class="button-group" id="group-complex">
+        <button class="filter-btn active" data-filter="all">전체 단지 ({len(articles)})</button>
+        <button class="filter-btn" data-filter="고덕국제신도시리슈빌레이크파크">리슈빌레이크파크 ({complex_stats.get('고덕국제신도시리슈빌레이크파크', 0)})</button>
+        <button class="filter-btn" data-filter="평택고덕국제신도시디에트르리비에르">디에트르리비에르 ({complex_stats.get('평택고덕국제신도시디에트르리비에르', 0)})</button>
+        <button class="filter-btn" data-filter="더샵지제역센트럴파크(1BL)">더샵센트럴파크 1BL ({complex_stats.get('더샵지제역센트럴파크(1BL)', 0)})</button>
+      </div>
+      
+      <div class="button-group">
+        <button class="filter-btn active" id="btn-view-cards">카드 뷰</button>
+        <button class="filter-btn" id="btn-view-diff">변동 내역 ({len(diff_info.get('events', []))})</button>
+      </div>
+    </div>
+    
+    <div class="filter-row">
+      <div class="button-group">
+        <span style="font-size: 13px; font-weight: 800; margin-right: 4px;">거래 방식:</span>
+        <button class="filter-btn active" data-trade="ALL">전체</button>
+        <button class="filter-btn" data-trade="B1">전세만</button>
+        <button class="filter-btn" data-trade="B2">월세만</button>
+        
+        <span style="font-size: 13px; font-weight: 800; margin-left: 12px; margin-right: 4px;">층 필터:</span>
+        <button class="filter-btn active" id="btn-toggle-low">저층(1~3층) 포함</button>
+      </div>
+      
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 13px; font-weight: 800;">정렬:</span>
+        <select class="sort-select" id="select-sort">
+          <option value="gain-desc">예상 순수익 높은순 ★</option>
+          <option value="deposit-asc">보증금 낮은순</option>
+          <option value="deposit-desc">보증금 높은순</option>
+          <option value="area-desc">전용면적 넓은순</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- [5] 매물 카드 그리드 컨테이너 -->
+  <main class="property-grid" id="container-properties">
+    <!-- JS에서 동적 렌더링 -->
+  </main>
+
+  <!-- [6] 최근 변동 내역 섹션 (토글 뷰) -->
+  <section class="diff-feed-section" id="container-diff">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <h2 style="font-size: 20px; font-weight: 900;">최근 수집 변동 내역 피드 (Diff History)</h2>
+      <span class="sticker-badge yellow">총 {len(diff_info.get('events', []))}건 감지</span>
+    </div>
+    <div id="diff-list-body">
+      <!-- JS 동적 렌더링 -->
+    </div>
+  </section>
+
+  <!-- [7] 푸터 -->
+  <footer class="neo-footer">
+    <p>평택 아파트 이사 지원 시스템 · 네이버페이 부동산 실시간 API 연동 · Neo-Brutalism Dashboard v1.0</p>
+    <p style="margin-top: 4px; font-family: var(--font-mono);">데이터 파일: pyeongtaek_dashboard.html (주소 고정 덮어쓰기 모드)</p>
+  </footer>
+
+</div>
+
+<script>
+// ==========================================================================
+// CLIENT-SIDE REAL-TIME DATA ENGINE & INTERACTION
+// ==========================================================================
+const RAW_ARTICLES = {articles_json};
+const DIFF_EVENTS = {diff_events_json};
+
+let currentDeposit = {default_deposit};
+let currentYield = {default_yield};
+let selectedComplex = 'all';
+let selectedTrade = 'ALL';
+let includeLowFloor = true;
+let currentSort = 'gain-desc';
+
+function formatKRW(amount) {{
+  if (amount === 0) return "0원";
+  const absAmt = Math.abs(amount);
+  const eok = Math.floor(absAmt / 100000000);
+  const man = Math.floor((absAmt % 100000000) / 10000);
+  let res = "";
+  if (eok > 0) res += eok + "억 ";
+  if (man > 0) res += man.toLocaleString() + "만 ";
+  res = res.trim() + "원";
+  return amount < 0 ? "-" + res : res;
+}}
+
+function calcFinancial(deposit, monthlyRent, currDep, currYld) {{
+  const investable = currDep - deposit;
+  const actualInvestment = Math.max(0, investable);
+  const isDeficit = investable < 0;
+  
+  const grossAnnual = Math.round(actualInvestment * (currYld / 100.0));
+  const annualRentCost = Math.round(monthlyRent * 12);
+  const netAnnualGain = grossAnnual - annualRentCost;
+  const monthlyNetGain = Math.round(netAnnualGain / 12.0);
+  
+  return {{
+    investable: actualInvestment,
+    investableStr: formatKRW(actualInvestment),
+    isDeficit: isDeficit,
+    deficitAmount: isDeficit ? Math.abs(investable) : 0,
+    netAnnualGain: netAnnualGain,
+    netAnnualStr: (netAnnualGain >= 0 ? "+" : "") + formatKRW(netAnnualGain),
+    monthlyNetGain: monthlyNetGain,
+    monthlyNetStr: (monthlyNetGain >= 0 ? "+" : "") + formatKRW(monthlyNetGain) + "/월"
+  }};
+}}
+
+function updateKPIs() {{
+  let maxInvest = 0;
+  let maxGain = -Infinity;
+  let bestMonthly = "";
+  
+  RAW_ARTICLES.forEach(a => {{
+    const fin = calcFinancial(a.deposit, a.monthlyRent, currentDeposit, currentYield);
+    if (fin.investable > maxInvest) maxInvest = fin.investable;
+    if (fin.netAnnualGain > maxGain) {{
+      maxGain = fin.netAnnualGain;
+      bestMonthly = fin.monthlyNetStr;
+    }}
+  }});
+  
+  document.getElementById('kpi-max-investment').innerText = formatKRW(maxInvest);
+  document.getElementById('kpi-max-annual-gain').innerText = (maxGain >= 0 ? "+" : "") + formatKRW(maxGain);
+  document.getElementById('kpi-max-monthly-gain').innerText = "월 환산 순수익: " + bestMonthly;
+}}
+
+function renderProperties() {{
+  const container = document.getElementById('container-properties');
+  container.innerHTML = "";
+  
+  // 1. 필터링
+  let filtered = RAW_ARTICLES.filter(a => {{
+    if (selectedComplex !== 'all' && a.complexName !== selectedComplex) return false;
+    if (selectedTrade !== 'ALL' && a.tradeType !== selectedTrade) return false;
+    if (!includeLowFloor && a.isLowFloor) return false;
+    return true;
+  }});
+  
+  // 2. 정렬
+  filtered.sort((a, b) => {{
+    const finA = calcFinancial(a.deposit, a.monthlyRent, currentDeposit, currentYield);
+    const finB = calcFinancial(b.deposit, b.monthlyRent, currentDeposit, currentYield);
+    
+    if (currentSort === 'gain-desc') return finB.netAnnualGain - finA.netAnnualGain;
+    if (currentSort === 'deposit-asc') return a.deposit - b.deposit;
+    if (currentSort === 'deposit-desc') return b.deposit - a.deposit;
+    if (currentSort === 'area-desc') return b.exclusiveArea - a.exclusiveArea;
+    return 0;
+  }});
+  
+  if (filtered.length === 0) {{
+    container.innerHTML = `<div style="grid-column: 1 / -1; padding: 40px; text-align: center; background: #fff; border: 3px solid #121212; border-radius: 12px; font-weight: 800;">
+      선택한 조건에 일치하는 매물이 없습니다. 상단 필터를 조정해 보세요.
+    </div>`;
+    return;
+  }}
+  
+  filtered.forEach(item => {{
+    const fin = calcFinancial(item.deposit, item.monthlyRent, currentDeposit, currentYield);
+    
+    const card = document.createElement('div');
+    card.className = "neo-property-card";
+    
+    const isJeonse = item.tradeType === 'B1';
+    const badgeColor = isJeonse ? "mint" : "orange";
+    const tradeTitle = isJeonse ? "전세" : "월세";
+    
+    const priceText = isJeonse ? 
+      formatKRW(item.deposit) : 
+      formatKRW(item.deposit) + " / 월 " + (item.monthlyRent / 10000).toLocaleString() + "만";
+      
+    let duplicatesHtml = "";
+    if (item.duplicates && item.duplicates.length > 0) {{
+      const dupRows = item.duplicates.map(d => `
+        <div class="dup-item">
+          <span style="color: #666;">${{d.realtor || '부동산'}}</span>
+          <a href="${{d.link}}" target="_blank">매물 열기 ↗</a>
+        </div>
+      `).join('');
+      
+      duplicatesHtml = `
+        <div class="realtor-summary">
+          <span>등록 부동산 (${{item.realtorCount}}곳 묶음)</span>
+          <button class="dup-toggle-btn" onclick="toggleDupList('${{item.articleNo}}')">중개사 목록 펼치기 ▼</button>
+        </div>
+        <div class="dup-list-container" id="dup-box-${{item.articleNo}}">
+          ${{dupRows}}
+        </div>
+      `;
+    }} else {{
+      duplicatesHtml = `
+        <div class="realtor-summary">
+          <span>중개사: ${{item.realtor || '일반 매물'}}</span>
+        </div>
+      `;
+    }}
+    
+    card.innerHTML = `
+      <div>
+        <div class="card-top-row">
+          <div class="complex-info">
+            <span class="complex-name">${{item.shortName || item.complexName}}</span>
+            <span class="dong-floor">${{item.dong}}동 ${{item.floorInfo}}층 (${{item.supplyName || ''}})</span>
+          </div>
+          <span class="sticker-badge ${{badgeColor}}">${{tradeTitle}}</span>
+        </div>
+        
+        <div class="price-box">
+          <div class="price-main">${{priceText}}</div>
+          <div class="area-sub">전용 ${{item.exclusiveArea}}㎡ · 확인일: ${{item.confirmDate || '최근'}}</div>
+        </div>
+        
+        <div class="calc-result-box">
+          <div class="calc-row">
+            <span class="calc-label">투자 가능 원금 (8억 차액):</span>
+            <span class="calc-val highlight">+${{fin.investableStr}}</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">연 예상 순수익 (수익률 ${{currentYield}}%):</span>
+            <span class="calc-val profit">${{fin.netAnnualStr}}/년</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-label">월 환산 순수익:</span>
+            <span class="calc-val profit">${{fin.monthlyNetStr}}</span>
+          </div>
+        </div>
+        
+        <div class="card-features" title="${{item.feature}}">
+          ${{item.feature || '매물 특징 설명이 등록되지 않았습니다.'}}
+        </div>
+      </div>
+      
+      <div class="card-footer">
+        ${{duplicatesHtml}}
+        <a href="${{item.directUrl}}" target="_blank" class="btn-naver-link">
+          네이버 부동산에서 매물 확인 ↗
+        </a>
+      </div>
+    `;
+    
+    container.appendChild(card);
+  }});
+}}
+
+function renderDiffFeed() {{
+  const body = document.getElementById('diff-list-body');
+  body.innerHTML = "";
+  
+  if (DIFF_EVENTS.length === 0) {{
+    body.innerHTML = `<div style="padding: 20px; text-align: center; font-weight: 800; color: #666;">
+      직전 수집 시점 대비 감지된 신규 또는 호가 변동 내역이 없습니다. (현재 상태 안정 유지)
+    </div>`;
+    return;
+  }}
+  
+  DIFF_EVENTS.forEach(ev => {{
+    const item = document.createElement('div');
+    item.className = `diff-feed-item ${{ev.type}}`;
+    
+    let typeBadge = "";
+    if (ev.type === 'NEW') typeBadge = '<span class="sticker-badge mint">신규 등록</span>';
+    else if (ev.type === 'PRICE_CHANGED') typeBadge = '<span class="sticker-badge orange">가격 변동</span>';
+    else if (ev.type === 'REMOVED') typeBadge = '<span class="sticker-badge pink">거래 완료 추정</span>';
+    
+    item.innerHTML = `
+      <div style="display: flex; align-items: center; gap: 14px;">
+        ${{typeBadge}}
+        <div>
+          <div style="font-weight: 900; font-size: 15px;">
+            ${{ev.complexName}} [${{ev.tradeName}}] ${{ev.dong}}동 ${{ev.floorInfo}}층 (${{ev.exclusiveArea}}㎡)
+          </div>
+          <div style="font-size: 12px; font-weight: 700; color: #555; margin-top: 2px;">
+            ${{ev.desc}} · 감지시각: ${{ev.time}}
+          </div>
+        </div>
+      </div>
+      <a href="${{ev.directUrl}}" target="_blank" class="sticker-badge yellow" style="text-decoration: none;">
+        매물 링크 ↗
+      </a>
+    `;
+    body.appendChild(item);
+  }});
+}}
+
+function toggleDupList(artNo) {{
+  const box = document.getElementById(`dup-box-${{artNo}}`);
+  if (box) {{
+    box.style.display = box.style.display === 'block' ? 'none' : 'block';
+  }}
+}}
+
+// 이벤트 리스너 바인딩
+document.getElementById('input-current-deposit').addEventListener('input', (e) => {{
+  currentDeposit = parseInt(e.target.value);
+  document.getElementById('val-disp-deposit').innerText = formatKRW(currentDeposit);
+  updateKPIs();
+  renderProperties();
+}});
+
+document.getElementById('input-annual-yield').addEventListener('input', (e) => {{
+  currentYield = parseFloat(e.target.value);
+  document.getElementById('val-disp-yield').innerText = `연 ${{currentYield.toFixed(1)}}%`;
+  updateKPIs();
+  renderProperties();
+}});
+
+// 단지 필터 버튼
+document.querySelectorAll('#group-complex button').forEach(btn => {{
+  btn.addEventListener('click', () => {{
+    document.querySelectorAll('#group-complex button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedComplex = btn.getAttribute('data-filter');
+    renderProperties();
+  }});
+}});
+
+// 거래방식 버튼
+document.querySelectorAll('[data-trade]').forEach(btn => {{
+  btn.addEventListener('click', () => {{
+    document.querySelectorAll('[data-trade]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedTrade = btn.getAttribute('data-trade');
+    renderProperties();
+  }});
+}});
+
+// 저층 토글 버튼
+document.getElementById('btn-toggle-low').addEventListener('click', function() {{
+  includeLowFloor = !includeLowFloor;
+  this.innerText = includeLowFloor ? "저층(1~3층) 포함" : "저층(1~3층) 제외됨";
+  if (!includeLowFloor) this.classList.remove('active');
+  else this.classList.add('active');
+  renderProperties();
+}});
+
+// 정렬 변경
+document.getElementById('select-sort').addEventListener('change', (e) => {{
+  currentSort = e.target.value;
+  renderProperties();
+}});
+
+// 뷰 전환 버튼
+document.getElementById('btn-view-cards').addEventListener('click', () => {{
+  document.getElementById('container-properties').style.display = 'grid';
+  document.getElementById('container-diff').style.display = 'none';
+  document.getElementById('btn-view-cards').classList.add('active');
+  document.getElementById('btn-view-diff').classList.remove('active');
+}});
+
+document.getElementById('btn-view-diff').addEventListener('click', () => {{
+  document.getElementById('container-properties').style.display = 'none';
+  document.getElementById('container-diff').style.display = 'block';
+  document.getElementById('btn-view-cards').classList.remove('active');
+  document.getElementById('btn-view-diff').classList.add('active');
+  renderDiffFeed();
+}});
+
+// 초기 실행
+updateKPIs();
+renderProperties();
+</script>
+</body>
+</html>
+"""
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(html_content)
+    print(f"대시보드 HTML 파일 생성 완료: {output_path}")
