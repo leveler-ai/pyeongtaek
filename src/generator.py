@@ -831,8 +831,8 @@ function updateKPIs() {{
   }});
   
   document.getElementById('kpi-max-investment').innerText = formatKRW(maxInvest);
-  document.getElementById('kpi-max-annual-gain').innerText = (maxGain >= 0 ? "+" : "") + formatKRW(maxGain);
-  document.getElementById('kpi-max-monthly-gain').innerText = "월 환산 순수익: " + bestMonthly;
+  document.getElementById('kpi-max-annual-gain').innerText = (maxGain === -Infinity || maxGain === 0) ? "0원" : ((maxGain > 0 ? "+" : "") + formatKRW(maxGain));
+  document.getElementById('kpi-max-monthly-gain').innerText = "월 환산 순수익: " + (bestMonthly || "0원/월");
 }}
 
 function renderProperties() {{
