@@ -5,14 +5,16 @@ Neo-Brutalism 스타일 인포그래픽 대시보드 HTML 생성 모듈
 """
 
 import json
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from .financial_calc import calculate_finance_for_item, format_krw
+
+KST = timezone(timedelta(hours=9))
 
 def generate_dashboard_html(articles, diff_info, output_path, default_deposit=800000000, default_yield=10.0):
     """
     네오 브루탈리즘 스타일의 인터랙티브 단일 HTML 대시보드 생성
     """
-    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now_str = datetime.now(KST).strftime("%Y-%m-%d %H:%M:%S")
     
     # 각 매물에 초기 재무 계산 데이터 주입
     for item in articles:
