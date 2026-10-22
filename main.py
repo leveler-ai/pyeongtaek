@@ -31,6 +31,16 @@ def run_pipeline():
     articles = collect_all()
     print(f"-> 총 {len(articles)}개 타깃 매물 수집 완료 (전용 80㎡ 이상 전·월세)")
     
+    # [안전 서킷 브레이커] 수집된 매물이 0건인 경우
+    # 네이버 통신 지연이나 일시적 타임아웃으로 판단하여 기존 정상 데이터와 대시보드를 보존합니다.
+    if len(articles) == 0:
+        print("\n" + "!" * 60)
+        print("[안전 서킷 브레이커 가동] 수집된 매물이 0건입니다.")
+        print("(네이버 통신 장애 또는 일시적 네트워크 타임아웃 감지)")
+        print("기존 정상 데이터와 대시보드를 보호하기 위해 덮어쓰기를 건너뜁니다.")
+        print("!" * 60 + "\n")
+        return
+    
     # 2. 변동(Diff) 분석
     print("\n2. 이전 스냅샷 대조 및 변동 내역 분석 중...")
     history_file = os.path.join(BASE_DIR, "data", "history.json")
