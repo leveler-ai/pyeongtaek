@@ -164,12 +164,41 @@ def collect_complex_articles(complex_info):
             
     return articles
 
+def fetch_article_detail_info(article_no):
+    """
+    네이버 매물 상세 페이지에서 입주가능일 및 융자금(근저당) 정보를 정밀 추출합니다.
+    """
+    url = f"https://fin.land.naver.com/articles/{article_no}"
+    try:
+        r = requests.get(url, headers=HEADERS, impersonate='chrome120', timeout=6)
+        if r.status_code == 200:
+            html = r.text
+            # 입주가능일 매칭
+            m_move = re.search(r'term">입주가능일</div><div[^>]*definition">([^<]+)</div>', html)
+            move_in = m_move.group(1).strip() if m_move else "협의 가능"
+            
+            # 융자금 / 근저당 매칭
+            m_loan = re.search(r'term">융자금</div><div[^>]*definition">([^<]+)</div>', html)
+            loan_info = m_loan.group(1).strip() if m_loan else "정보 없음"
+            return move_in, loan_info
+    except Exception:
+        pass
+    return "협의 가능", "정보 없음"
+
 def collect_all():
     """
-    모든 대상 단지 수집 및 통합 반환
+    모든 대상 단지 수집 및 입주가능일/융자금 상세 보강 후 반환
     """
     all_articles = []
     for comp in TARGET_COMPLEXES:
         items = collect_complex_articles(comp)
         all_articles.extend(items)
+        
+    print(f"[*] 총 {len(all_articles)}개 매물의 입주가능일 및 융자금(근저당) 상세 조회 중...")
+    for item in all_articles:
+        move_in, loan_info = fetch_article_detail_info(item['articleNo'])
+        item['moveInDate'] = move_in
+        item['loanInfo'] = loan_info
+        time.sleep(0.1)
+        
     return all_articles
