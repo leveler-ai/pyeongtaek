@@ -7,7 +7,10 @@
 import os
 import sys
 import json
-from datetime import datetime
+import shutil
+from datetime import datetime, timezone, timedelta
+
+KST = timezone(timedelta(hours=9))
 
 # src 경로 추가
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -20,7 +23,7 @@ from src.generator import generate_dashboard_html
 
 def run_pipeline():
     print("=" * 60)
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 평택 매물 모니터링 파이프라인 시작")
+    print(f"[{datetime.now(KST).strftime('%Y-%m-%d %H:%M:%S')}] 평택 매물 모니터링 파이프라인 시작")
     print("=" * 60)
     
     # 1. 데이터 수집
@@ -42,6 +45,7 @@ def run_pipeline():
     # 4. Neo-Brutalism HTML 대시보드 생성 (고정 경로)
     print("\n3. 고정 경로 Neo-Brutalism HTML 대시보드 갱신 중...")
     dashboard_path = os.path.join(BASE_DIR, "pyeongtaek_dashboard.html")
+    index_path = os.path.join(BASE_DIR, "index.html")
     generate_dashboard_html(
         articles=articles,
         diff_info=diff_info,
@@ -50,9 +54,23 @@ def run_pipeline():
         default_yield=DEFAULT_ANNUAL_YIELD
     )
     
+    # index.html로 복사
+    import shutil
+    shutil.copyfile(dashboard_path, index_path)
+    
+    # 5. GitHub Pages 저장소 자동 Push
+    try:
+        from src.uploader import upload_file_to_github
+        print("\n4. GitHub Pages (leveler-ai.github.io) 자동 배포 동기화 중...")
+        upload_file_to_github(index_path, "index.html", f"Auto-update: {datetime.now(KST).strftime('%Y-%m-%d %H:%M')}")
+        upload_file_to_github(history_file, "data/history.json", f"Update history: {datetime.now(KST).strftime('%Y-%m-%d %H:%M')}")
+    except Exception as e:
+        print(f"[!] GitHub 자동 동기화 건너뜀: {e}")
+    
     print("\n" + "=" * 60)
     print("모든 작업 완료!")
-    print(f"대시보드 파일: {dashboard_path}")
+    print(f"로컬 대시보드: {dashboard_path}")
+    print("GitHub Pages URL: https://leveler-ai.github.io/pyeongtaek/")
     print("=" * 60)
 
 if __name__ == "__main__":
