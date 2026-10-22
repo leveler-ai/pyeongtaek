@@ -53,18 +53,32 @@ def collect_complex_articles(complex_info):
             payload["seed"] = seed
             payload["lastInfo"] = last_info
             
-        try:
-            r = requests.post(
-                "https://fin.land.naver.com/front-api/v1/complex/article/list",
-                json=payload,
-                headers=HEADERS,
-                impersonate='chrome120',
-                timeout=10
-            )
-            if r.status_code != 200:
-                print(f"[{cname}] 수집 중 오류: HTTP {r.status_code}")
-                break
+        success = False
+        r = None
+        for attempt in range(1, 4):
+            try:
+                r = requests.post(
+                    "https://fin.land.naver.com/front-api/v1/complex/article/list",
+                    json=payload,
+                    headers=HEADERS,
+                    impersonate='chrome120',
+                    timeout=20
+                )
+                if r.status_code == 200:
+                    success = True
+                    break
+                else:
+                    print(f"[{cname}] 수집 응답 코드 {r.status_code} -> 재시도 ({attempt}/3)")
+                    time.sleep(2)
+            except Exception as e:
+                print(f"[{cname}] 수집 중 통신 오류 -> 재시도 ({attempt}/3): {e}")
+                time.sleep(2)
                 
+        if not success or r is None:
+            print(f"[{cname}] 3회 시도 후에도 수집 실패, 단지 수집을 중단합니다.")
+            break
+            
+        try:
             res = r.json().get('result', {})
             items = res.get('list', [])
             if not items:
