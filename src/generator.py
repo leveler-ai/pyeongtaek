@@ -433,6 +433,61 @@ h1, h2, h3, h4, p, span, div, a, label, button, input {{
   gap: 6px;
 }}
 
+/* 입주가능일 & 융자금 안전 정보 박스 */
+.move-loan-box {{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: #FAF7F0;
+  border: 2px solid #121212;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+}}
+
+@media (max-width: 480px) {{
+  .move-loan-box {{
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }}
+}}
+
+.move-loan-item {{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}}
+
+.ml-label {{
+  font-size: 11px;
+  font-weight: 800;
+  color: #666;
+}}
+
+.ml-value {{
+  font-size: 12px;
+  font-weight: 800;
+  color: #121212;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}}
+
+.loan-tag {{
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 900;
+  border: 1.5px solid #121212;
+  border-radius: 4px;
+  width: fit-content;
+}}
+
+.tag-mint {{ background: var(--neo-mint); color: #121212; }}
+.tag-yellow {{ background: var(--neo-yellow); color: #121212; }}
+.tag-pink {{ background: var(--neo-pink); color: #ffffff; }}
+.tag-gray {{ background: #E5E5E5; color: #555; }}
+
 .calc-row {{
   display: flex;
   justify-content: space-between;
@@ -835,6 +890,19 @@ function updateKPIs() {{
   document.getElementById('kpi-max-monthly-gain').innerText = "월 환산 순수익: " + (bestMonthly || "0원/월");
 }}
 
+function getLoanBadge(loan) {{
+  if (!loan || loan === '정보 없음' || loan === '-') {{
+    return '<span class="loan-tag tag-gray">정보 미표기</span>';
+  }}
+  if (loan.includes('없음')) {{
+    return '<span class="loan-tag tag-mint">🛡️ 융자금 없음</span>';
+  }}
+  if (loan.includes('30% 미만')) {{
+    return `<span class="loan-tag tag-yellow">⚠️ 융자 30% 미만</span>`;
+  }}
+  return `<span class="loan-tag tag-pink">🚨 융자: ${{loan}}</span>`;
+}}
+
 function renderProperties() {{
   const container = document.getElementById('container-properties');
   container.innerHTML = "";
@@ -919,6 +987,17 @@ function renderProperties() {{
         <div class="price-box">
           <div class="price-main">${{priceText}}</div>
           <div class="area-sub">전용 ${{item.exclusiveArea}}㎡ · 확인일: ${{item.confirmDate || '최근'}}</div>
+        </div>
+        
+        <div class="move-loan-box">
+          <div class="move-loan-item">
+            <span class="ml-label">📅 입주 가능일</span>
+            <span class="ml-value" title="${{item.moveInDate || '협의 가능'}}">${{item.moveInDate || '협의 가능'}}</span>
+          </div>
+          <div class="move-loan-item">
+            <span class="ml-label">🏦 융자금(근저당)</span>
+            ${{getLoanBadge(item.loanInfo)}}
+          </div>
         </div>
         
         <div class="calc-result-box">
