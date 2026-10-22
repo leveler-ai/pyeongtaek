@@ -33,6 +33,7 @@ jobs:
       - name: Run crawler pipeline
         run: |
           python main.py
+          cp pyeongtaek_dashboard.html index.html
 
       - name: Commit and push changes
         run: |
