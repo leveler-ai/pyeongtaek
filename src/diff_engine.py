@@ -6,7 +6,9 @@
 
 import os
 import json
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+
+KST = timezone(timedelta(hours=9))
 
 def analyze_diff(current_articles, history_path):
     """
@@ -28,7 +30,7 @@ def analyze_diff(current_articles, history_path):
     current_map = {item['articleNo']: item for item in current_articles}
     
     events = []
-    now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
+    now_str = datetime.now(KST).strftime("%Y-%m-%d %H:%M")
     
     # 1. 신규 매물 및 가격 변동 매물 검사
     for art_no, cur in current_map.items():
