@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23 12:10",
+  "updatedAt": "2026-10-23 13:10",
   "articles": [
     {
       "articleNo": "2657251513",
@@ -25,6 +25,12 @@
       "directUrl": "https://fin.land.naver.com/articles/2657251513",
       "duplicates": [
         {
+          "articleNo": "2657189025",
+          "realtor": "풍경채호반중앙공인중개사사무소",
+          "feature": "무융자안전전세. 에어컨4. 중문. 식세기. 방3",
+          "link": "https://fin.land.naver.com/articles/2657189025"
+        },
+        {
           "articleNo": "2657240127",
           "realtor": "OK호반코너부동산공인중개사사무소",
           "feature": "OK추천. 무융자전세, 시스템에어컨, 입주협의가능",
@@ -37,10 +43,16 @@
           "link": "https://fin.land.naver.com/articles/2657251513"
         },
         {
-          "articleNo": "2657189025",
+          "articleNo": "2657082240",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "무융자조건. 입주27년3월협의. 시스템에어컨. 주방넓은구조",
+          "link": "https://fin.land.naver.com/articles/2657082240"
+        },
+        {
+          "articleNo": "2657071566",
           "realtor": "풍경채호반중앙공인중개사사무소",
-          "feature": "무융자안전전세. 에어컨4. 중문. 식세기. 방3",
-          "link": "https://fin.land.naver.com/articles/2657189025"
+          "feature": "안전전세, 호수공원 옆. 에어컨4대. 관리최상",
+          "link": "https://fin.land.naver.com/articles/2657071566"
         },
         {
           "articleNo": "2657071557",
@@ -55,34 +67,10 @@
           "link": "https://fin.land.naver.com/articles/2657104497"
         },
         {
-          "articleNo": "2657071566",
-          "realtor": "풍경채호반중앙공인중개사사무소",
-          "feature": "안전전세, 호수공원 옆. 에어컨4대. 관리최상",
-          "link": "https://fin.land.naver.com/articles/2657071566"
-        },
-        {
-          "articleNo": "2657082240",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "무융자조건. 입주27년3월협의. 시스템에어컨. 주방넓은구조",
-          "link": "https://fin.land.naver.com/articles/2657082240"
-        },
-        {
           "articleNo": "2657104734",
           "realtor": "풍경채스타공인중개사사무소",
           "feature": "스타 귀한 무융자 전세 버팀목가능 조율가능 시에4 중문 식세기 그린뷰",
           "link": "https://fin.land.naver.com/articles/2657104734"
-        },
-        {
-          "articleNo": "2656761406",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "27년3월입주협의.무융자.초록답답하지않은뷰.방3개.에어컨4대.중문",
-          "link": "https://fin.land.naver.com/articles/2656761406"
-        },
-        {
-          "articleNo": "2656736886",
-          "realtor": "평택고덕대장부동산공인중개사사무소",
-          "feature": "모든대출가능 무융자 버팀목가능 방3개 시스템에어컨4대 중문 식세기 등",
-          "link": "https://fin.land.naver.com/articles/2656736886"
         },
         {
           "articleNo": "2656884271",
@@ -91,16 +79,28 @@
           "link": "https://fin.land.naver.com/articles/2656884271"
         },
         {
+          "articleNo": "2656785281",
+          "realtor": "고덕리슈빌공인중개사사무소",
+          "feature": "무융자조건 시스템에어컨4대 중문 식세기등 옵션굿",
+          "link": "https://fin.land.naver.com/articles/2656785281"
+        },
+        {
+          "articleNo": "2656761406",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "27년3월입주협의.무융자.초록답답하지않은뷰.방3개.에어컨4대.중문",
+          "link": "https://fin.land.naver.com/articles/2656761406"
+        },
+        {
           "articleNo": "2656874679",
           "realtor": "대광로제비앙공인중개사사무소",
           "feature": "무융자안심전세,대출가능,에어컨4,중문,호수 품은 아파트",
           "link": "https://fin.land.naver.com/articles/2656874679"
         },
         {
-          "articleNo": "2656785281",
-          "realtor": "고덕리슈빌공인중개사사무소",
-          "feature": "무융자조건 시스템에어컨4대 중문 식세기등 옵션굿",
-          "link": "https://fin.land.naver.com/articles/2656785281"
+          "articleNo": "2656736886",
+          "realtor": "평택고덕대장부동산공인중개사사무소",
+          "feature": "모든대출가능 무융자 버팀목가능 방3개 시스템에어컨4대 중문 식세기 등",
+          "link": "https://fin.land.naver.com/articles/2656736886"
         },
         {
           "articleNo": "2656748293",
@@ -109,16 +109,16 @@
           "link": "https://fin.land.naver.com/articles/2656748293"
         },
         {
-          "articleNo": "2656600644",
-          "realtor": "프리마공인중개사사무소",
-          "feature": "27년3월입주협의 무융자 시에풀 중문 ",
-          "link": "https://fin.land.naver.com/articles/2656600644"
-        },
-        {
           "articleNo": "2656621081",
           "realtor": "OK호반코너부동산공인중개사사무소",
           "feature": "OK무융자. 시스템에어컨4대, 중문, 집상태좋아요",
           "link": "https://fin.land.naver.com/articles/2656621081"
+        },
+        {
+          "articleNo": "2656600644",
+          "realtor": "프리마공인중개사사무소",
+          "feature": "27년3월입주협의 무융자 시에풀 중문 ",
+          "link": "https://fin.land.naver.com/articles/2656600644"
         },
         {
           "articleNo": "2656533202",
@@ -198,16 +198,22 @@
           "link": "https://fin.land.naver.com/articles/2657251886"
         },
         {
+          "articleNo": "2657083638",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "1년계약가능.11월말이후협의입주.전입가능.방3개.에어컨4대",
+          "link": "https://fin.land.naver.com/articles/2657083638"
+        },
+        {
           "articleNo": "2657105341",
           "realtor": "고덕호반대장부동산공인중개사사무소",
           "feature": "1년계약 법인환영 11월하순부터 협의입주가능 풀시스템에어컨 등",
           "link": "https://fin.land.naver.com/articles/2657105341"
         },
         {
-          "articleNo": "2657083638",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "1년계약가능.11월말이후협의입주.전입가능.방3개.에어컨4대",
-          "link": "https://fin.land.naver.com/articles/2657083638"
+          "articleNo": "2656781088",
+          "realtor": "고덕리슈빌공인중개사사무소",
+          "feature": "단지뷰 시스템에어컨4대  상가이용편리",
+          "link": "https://fin.land.naver.com/articles/2656781088"
         },
         {
           "articleNo": "2656771183",
@@ -222,10 +228,10 @@
           "link": "https://fin.land.naver.com/articles/2656763164"
         },
         {
-          "articleNo": "2656781088",
-          "realtor": "고덕리슈빌공인중개사사무소",
-          "feature": "단지뷰 시스템에어컨4대  상가이용편리",
-          "link": "https://fin.land.naver.com/articles/2656781088"
+          "articleNo": "2656537727",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "1년계약가능.11월말이후협의입주.전입가능.방3개.에어컨4대",
+          "link": "https://fin.land.naver.com/articles/2656537727"
         },
         {
           "articleNo": "2656533841",
@@ -234,28 +240,22 @@
           "link": "https://fin.land.naver.com/articles/2656533841"
         },
         {
-          "articleNo": "2656537727",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "1년계약가능.11월말이후협의입주.전입가능.방3개.에어컨4대",
-          "link": "https://fin.land.naver.com/articles/2656537727"
-        },
-        {
           "articleNo": "2656368251",
           "realtor": "평택고덕대장부동산공인중개사사무소",
           "feature": "법인환영 1년계약가능 방3개 풀시스템에어컨 등 협의입주가능",
           "link": "https://fin.land.naver.com/articles/2656368251"
         },
         {
-          "articleNo": "2656057311",
-          "realtor": "프리마공인중개사사무소",
-          "feature": "공세권 전입가능 방3개 시스템에어컨풀 셔틀버스인근 상가동인근",
-          "link": "https://fin.land.naver.com/articles/2656057311"
-        },
-        {
           "articleNo": "2655986591",
           "realtor": "대광로제비앙공인중개사사무소",
           "feature": "법인환영,12월입주,전입가능,1년가능,에어컨4,예술의 전당",
           "link": "https://fin.land.naver.com/articles/2655986591"
+        },
+        {
+          "articleNo": "2656057311",
+          "realtor": "프리마공인중개사사무소",
+          "feature": "공세권 전입가능 방3개 시스템에어컨풀 셔틀버스인근 상가동인근",
+          "link": "https://fin.land.naver.com/articles/2656057311"
         },
         {
           "articleNo": "2656053410",
@@ -492,16 +492,16 @@
           "link": "https://fin.land.naver.com/articles/2656274570"
         },
         {
-          "articleNo": "2655986589",
-          "realtor": "대광로제비앙공인중개사사무소",
-          "feature": "11월중순,미군렌탈,인기있는 A타입,에어컨등 가전가구",
-          "link": "https://fin.land.naver.com/articles/2655986589"
-        },
-        {
           "articleNo": "2656056889",
           "realtor": "프리마공인중개사사무소",
           "feature": "렌탈 전세도가능 풀옵션 저층 선호타입",
           "link": "https://fin.land.naver.com/articles/2656056889"
+        },
+        {
+          "articleNo": "2655986589",
+          "realtor": "대광로제비앙공인중개사사무소",
+          "feature": "11월중순,미군렌탈,인기있는 A타입,에어컨등 가전가구",
+          "link": "https://fin.land.naver.com/articles/2655986589"
         },
         {
           "articleNo": "2654872187",
@@ -727,8 +727,8 @@
       ],
       "moveInDate": "2026년 10월 25일",
       "loanInfo": "정보 없음",
-      "changeStatus": "NEW",
-      "changeText": "신규 등록"
+      "changeStatus": "MAINTAINED",
+      "changeText": "유지"
     },
     {
       "articleNo": "2656850399",
@@ -749,16 +749,14 @@
       "managementFee": 300000,
       "realtor": "고덕디에트르대방공인중개사사무소",
       "realtorCount": 1,
-      "feature": "11월중순이후 입주협의 초중앞 엘베2 에어컨5 옵션다양",
+      "feature": "11월중에서 12월초입주 3층이상 초중앞 엘베2 에어컨5 옵션다양",
       "confirmDate": "2026-10-21",
       "directUrl": "https://fin.land.naver.com/articles/2656850399",
       "duplicates": [],
       "moveInDate": "2026년 11월 20일",
       "loanInfo": "정보 없음",
-      "changeStatus": "PRICE_CHANGED",
-      "prevDeposit": 375000000,
-      "prevMonthlyRent": 0,
-      "changeText": "보증금 500만 인하"
+      "changeStatus": "MAINTAINED",
+      "changeText": "유지"
     },
     {
       "articleNo": "2656306713",
@@ -854,8 +852,8 @@
       "duplicates": [],
       "moveInDate": "즉시입주 협의 가능",
       "loanInfo": "정보 없음",
-      "changeStatus": "NEW",
-      "changeText": "신규 등록"
+      "changeStatus": "MAINTAINED",
+      "changeText": "유지"
     },
     {
       "articleNo": "2656676765",
@@ -927,64 +925,5 @@
       "changeText": "유지"
     }
   ],
-  "lastEvents": [
-    {
-      "type": "NEW",
-      "time": "2026-10-23 12:10",
-      "complexName": "평택고덕국제신도시디에트르리비에르",
-      "tradeName": "전세",
-      "dong": "1510",
-      "floorInfo": "19/19",
-      "exclusiveArea": 84.97,
-      "deposit": 400000000,
-      "monthlyRent": 0,
-      "articleNo": "2657137381",
-      "directUrl": "https://fin.land.naver.com/articles/2657137381",
-      "desc": "새로운 전세 매물이 등록되었습니다."
-    },
-    {
-      "type": "PRICE_CHANGED",
-      "time": "2026-10-23 12:10",
-      "complexName": "평택고덕국제신도시디에트르리비에르",
-      "tradeName": "전세",
-      "dong": "1502",
-      "floorInfo": "저/20",
-      "exclusiveArea": 84.97,
-      "deposit": 370000000,
-      "monthlyRent": 0,
-      "prevDeposit": 375000000,
-      "prevMonthlyRent": 0,
-      "articleNo": "2656850399",
-      "directUrl": "https://fin.land.naver.com/articles/2656850399",
-      "desc": "보증금 500만 인하"
-    },
-    {
-      "type": "NEW",
-      "time": "2026-10-23 12:10",
-      "complexName": "더샵지제역센트럴파크(1BL)",
-      "tradeName": "월세",
-      "dong": "106",
-      "floorInfo": "고/27",
-      "exclusiveArea": 83.71,
-      "deposit": 100000000,
-      "monthlyRent": 1200000,
-      "articleNo": "2657299313",
-      "directUrl": "https://fin.land.naver.com/articles/2657299313",
-      "desc": "새로운 월세 매물이 등록되었습니다."
-    },
-    {
-      "type": "REMOVED",
-      "time": "2026-10-23 12:10",
-      "complexName": "평택고덕국제신도시디에트르리비에르",
-      "tradeName": "전세",
-      "dong": "1510",
-      "floorInfo": "19/19",
-      "exclusiveArea": 84.97,
-      "deposit": 400000000,
-      "monthlyRent": 0,
-      "articleNo": "2656899623",
-      "directUrl": "https://fin.land.naver.com/articles/2656899623",
-      "desc": "목록에서 삭제됨 (거래 완료 추정)"
-    }
-  ]
+  "lastEvents": []
 }
