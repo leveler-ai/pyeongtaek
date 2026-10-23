@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23 19:10",
+  "updatedAt": "2026-10-23 20:10",
   "articles": [
     {
       "articleNo": "2657251513",
@@ -25,16 +25,16 @@
       "directUrl": "https://fin.land.naver.com/articles/2657251513",
       "duplicates": [
         {
-          "articleNo": "2657251513",
-          "realtor": "평택고덕대장부동산공인중개사사무소",
-          "feature": "무융자전세 버팀목가능 27년3월 협의입주가능 풀시스템에어컨 중문 등",
-          "link": "https://fin.land.naver.com/articles/2657251513"
-        },
-        {
           "articleNo": "2657240127",
           "realtor": "OK호반코너부동산공인중개사사무소",
           "feature": "OK추천. 무융자전세, 시스템에어컨, 입주협의가능",
           "link": "https://fin.land.naver.com/articles/2657240127"
+        },
+        {
+          "articleNo": "2657251513",
+          "realtor": "평택고덕대장부동산공인중개사사무소",
+          "feature": "무융자전세 버팀목가능 27년3월 협의입주가능 풀시스템에어컨 중문 등",
+          "link": "https://fin.land.naver.com/articles/2657251513"
         },
         {
           "articleNo": "2657189025",
@@ -49,10 +49,10 @@
           "link": "https://fin.land.naver.com/articles/2657071557"
         },
         {
-          "articleNo": "2657082240",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "무융자조건. 입주27년3월협의. 시스템에어컨. 주방넓은구조",
-          "link": "https://fin.land.naver.com/articles/2657082240"
+          "articleNo": "2657071566",
+          "realtor": "풍경채호반중앙공인중개사사무소",
+          "feature": "안전전세, 호수공원 옆. 에어컨4대. 관리최상",
+          "link": "https://fin.land.naver.com/articles/2657071566"
         },
         {
           "articleNo": "2657104497",
@@ -61,10 +61,10 @@
           "link": "https://fin.land.naver.com/articles/2657104497"
         },
         {
-          "articleNo": "2657071566",
-          "realtor": "풍경채호반중앙공인중개사사무소",
-          "feature": "안전전세, 호수공원 옆. 에어컨4대. 관리최상",
-          "link": "https://fin.land.naver.com/articles/2657071566"
+          "articleNo": "2657082240",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "무융자조건. 입주27년3월협의. 시스템에어컨. 주방넓은구조",
+          "link": "https://fin.land.naver.com/articles/2657082240"
         },
         {
           "articleNo": "2657104734",
@@ -73,28 +73,16 @@
           "link": "https://fin.land.naver.com/articles/2657104734"
         },
         {
-          "articleNo": "2656736886",
-          "realtor": "평택고덕대장부동산공인중개사사무소",
-          "feature": "모든대출가능 무융자 버팀목가능 방3개 시스템에어컨4대 중문 식세기 등",
-          "link": "https://fin.land.naver.com/articles/2656736886"
-        },
-        {
-          "articleNo": "2656884271",
-          "realtor": "OK호반코너부동산공인중개사사무소",
-          "feature": "OK추천. 무융자전세. 시스템에어컨, 중문",
-          "link": "https://fin.land.naver.com/articles/2656884271"
-        },
-        {
           "articleNo": "2656785281",
           "realtor": "고덕리슈빌공인중개사사무소",
           "feature": "무융자조건 시스템에어컨4대 중문 식세기등 옵션굿",
           "link": "https://fin.land.naver.com/articles/2656785281"
         },
         {
-          "articleNo": "2656761406",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "27년3월입주협의.무융자.초록답답하지않은뷰.방3개.에어컨4대.중문",
-          "link": "https://fin.land.naver.com/articles/2656761406"
+          "articleNo": "2656736886",
+          "realtor": "평택고덕대장부동산공인중개사사무소",
+          "feature": "모든대출가능 무융자 버팀목가능 방3개 시스템에어컨4대 중문 식세기 등",
+          "link": "https://fin.land.naver.com/articles/2656736886"
         },
         {
           "articleNo": "2656874679",
@@ -103,16 +91,22 @@
           "link": "https://fin.land.naver.com/articles/2656874679"
         },
         {
+          "articleNo": "2656884271",
+          "realtor": "OK호반코너부동산공인중개사사무소",
+          "feature": "OK추천. 무융자전세. 시스템에어컨, 중문",
+          "link": "https://fin.land.naver.com/articles/2656884271"
+        },
+        {
+          "articleNo": "2656761406",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "27년3월입주협의.무융자.초록답답하지않은뷰.방3개.에어컨4대.중문",
+          "link": "https://fin.land.naver.com/articles/2656761406"
+        },
+        {
           "articleNo": "2656748293",
           "realtor": "고덕탑공인중개사사무소",
           "feature": "삼성가까운 리슈빌.전세대출가능. 시스템에어컨. 호수산책 탑",
           "link": "https://fin.land.naver.com/articles/2656748293"
-        },
-        {
-          "articleNo": "2656522102",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "27년3월 입주협의. 무융자조건. 시스템에어컨4대.",
-          "link": "https://fin.land.naver.com/articles/2656522102"
         },
         {
           "articleNo": "2656621081",
@@ -121,16 +115,22 @@
           "link": "https://fin.land.naver.com/articles/2656621081"
         },
         {
+          "articleNo": "2656600644",
+          "realtor": "프리마공인중개사사무소",
+          "feature": "27년3월입주협의 무융자 시에풀 중문 ",
+          "link": "https://fin.land.naver.com/articles/2656600644"
+        },
+        {
           "articleNo": "2656533202",
           "realtor": "평택고덕대장부동산공인중개사사무소",
           "feature": "무융자 버팀목가능 풀시스템에어컨 중문 등 호수품은아파트",
           "link": "https://fin.land.naver.com/articles/2656533202"
         },
         {
-          "articleNo": "2656600644",
-          "realtor": "프리마공인중개사사무소",
-          "feature": "27년3월입주협의 무융자 시에풀 중문 ",
-          "link": "https://fin.land.naver.com/articles/2656600644"
+          "articleNo": "2656522102",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "27년3월 입주협의. 무융자조건. 시스템에어컨4대.",
+          "link": "https://fin.land.naver.com/articles/2656522102"
         },
         {
           "articleNo": "2656487844",
@@ -145,16 +145,16 @@
           "link": "https://fin.land.naver.com/articles/2656317702"
         },
         {
-          "articleNo": "2656395584",
-          "realtor": "고덕365공인중개사사무소",
-          "feature": "고덕365. 무융자전세. 시스템에어컨4대. 중문. 27년3월하순협의입주",
-          "link": "https://fin.land.naver.com/articles/2656395584"
-        },
-        {
           "articleNo": "2656318888",
           "realtor": "고덕탑공인중개사사무소",
           "feature": "채광좋고 살기좋은집. 융자없는전세. 시스템에어컨 .중문",
           "link": "https://fin.land.naver.com/articles/2656318888"
+        },
+        {
+          "articleNo": "2656395584",
+          "realtor": "고덕365공인중개사사무소",
+          "feature": "고덕365. 무융자전세. 시스템에어컨4대. 중문. 27년3월하순협의입주",
+          "link": "https://fin.land.naver.com/articles/2656395584"
         },
         {
           "articleNo": "2656875054",
@@ -198,16 +198,22 @@
           "link": "https://fin.land.naver.com/articles/2657251886"
         },
         {
+          "articleNo": "2657083638",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "1년계약가능.11월말이후협의입주.전입가능.방3개.에어컨4대",
+          "link": "https://fin.land.naver.com/articles/2657083638"
+        },
+        {
           "articleNo": "2657105341",
           "realtor": "고덕호반대장부동산공인중개사사무소",
           "feature": "1년계약 법인환영 11월하순부터 협의입주가능 풀시스템에어컨 등",
           "link": "https://fin.land.naver.com/articles/2657105341"
         },
         {
-          "articleNo": "2657083638",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "1년계약가능.11월말이후협의입주.전입가능.방3개.에어컨4대",
-          "link": "https://fin.land.naver.com/articles/2657083638"
+          "articleNo": "2656781088",
+          "realtor": "고덕리슈빌공인중개사사무소",
+          "feature": "단지뷰 시스템에어컨4대  상가이용편리",
+          "link": "https://fin.land.naver.com/articles/2656781088"
         },
         {
           "articleNo": "2656763164",
@@ -222,10 +228,10 @@
           "link": "https://fin.land.naver.com/articles/2656771183"
         },
         {
-          "articleNo": "2656781088",
-          "realtor": "고덕리슈빌공인중개사사무소",
-          "feature": "단지뷰 시스템에어컨4대  상가이용편리",
-          "link": "https://fin.land.naver.com/articles/2656781088"
+          "articleNo": "2656533841",
+          "realtor": "고덕호반대장부동산공인중개사사무소",
+          "feature": "법인환영 1년가능 11월말이후 협의입주가능 풀시스템에어컨",
+          "link": "https://fin.land.naver.com/articles/2656533841"
         },
         {
           "articleNo": "2656537727",
@@ -234,16 +240,16 @@
           "link": "https://fin.land.naver.com/articles/2656537727"
         },
         {
-          "articleNo": "2656533841",
-          "realtor": "고덕호반대장부동산공인중개사사무소",
-          "feature": "법인환영 1년가능 11월말이후 협의입주가능 풀시스템에어컨",
-          "link": "https://fin.land.naver.com/articles/2656533841"
-        },
-        {
           "articleNo": "2656368251",
           "realtor": "평택고덕대장부동산공인중개사사무소",
           "feature": "법인환영 1년계약가능 방3개 풀시스템에어컨 등 협의입주가능",
           "link": "https://fin.land.naver.com/articles/2656368251"
+        },
+        {
+          "articleNo": "2656057311",
+          "realtor": "프리마공인중개사사무소",
+          "feature": "공세권 전입가능 방3개 시스템에어컨풀 셔틀버스인근 상가동인근",
+          "link": "https://fin.land.naver.com/articles/2656057311"
         },
         {
           "articleNo": "2656053410",
@@ -256,12 +262,6 @@
           "realtor": "대광로제비앙공인중개사사무소",
           "feature": "법인환영,12월입주,전입가능,1년가능,에어컨4,예술의 전당",
           "link": "https://fin.land.naver.com/articles/2655986591"
-        },
-        {
-          "articleNo": "2656057311",
-          "realtor": "프리마공인중개사사무소",
-          "feature": "공세권 전입가능 방3개 시스템에어컨풀 셔틀버스인근 상가동인근",
-          "link": "https://fin.land.naver.com/articles/2656057311"
         },
         {
           "articleNo": "2654598668",
@@ -299,16 +299,16 @@
       "directUrl": "https://fin.land.naver.com/articles/2657113256",
       "duplicates": [
         {
-          "articleNo": "2657113256",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "로얄동.호수조망.무융자조건.입주협의가능.방3개.에어컨4대.",
-          "link": "https://fin.land.naver.com/articles/2657113256"
-        },
-        {
           "articleNo": "2657087974",
           "realtor": "프리마공인중개사사무소",
           "feature": "입주일자 협의 무융자조건 정면호수뷰",
           "link": "https://fin.land.naver.com/articles/2657087974"
+        },
+        {
+          "articleNo": "2657113256",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "로얄동.호수조망.무융자조건.입주협의가능.방3개.에어컨4대.",
+          "link": "https://fin.land.naver.com/articles/2657113256"
         },
         {
           "articleNo": "2656761193",
@@ -439,16 +439,16 @@
           "link": "https://fin.land.naver.com/articles/2656274570"
         },
         {
-          "articleNo": "2656056889",
-          "realtor": "프리마공인중개사사무소",
-          "feature": "렌탈 전세도가능 풀옵션 저층 선호타입",
-          "link": "https://fin.land.naver.com/articles/2656056889"
-        },
-        {
           "articleNo": "2655986589",
           "realtor": "대광로제비앙공인중개사사무소",
           "feature": "11월중순,미군렌탈,인기있는 A타입,에어컨등 가전가구",
           "link": "https://fin.land.naver.com/articles/2655986589"
+        },
+        {
+          "articleNo": "2656056889",
+          "realtor": "프리마공인중개사사무소",
+          "feature": "렌탈 전세도가능 풀옵션 저층 선호타입",
+          "link": "https://fin.land.naver.com/articles/2656056889"
         },
         {
           "articleNo": "2654872187",
