@@ -23,28 +23,16 @@
     "directUrl": "https://fin.land.naver.com/articles/2658857420",
     "duplicates": [
       {
-        "articleNo": "2658857420",
-        "realtor": "고덕퍼스트공인중개사사무소",
-        "feature": "27년3월입주협의.무융자.방3개.중문.에어컨4대.식기세척기",
-        "link": "https://fin.land.naver.com/articles/2658857420"
-      },
-      {
         "articleNo": "2658767688",
         "realtor": "고덕호반대장부동산공인중개사사무소",
         "feature": "협의입주가능 풀시스템에어컨 중문 식기세척기 집 컨디션굳",
         "link": "https://fin.land.naver.com/articles/2658767688"
       },
       {
-        "articleNo": "2658600433",
-        "realtor": "고덕리슈빌공인중개사사무소",
-        "feature": "무융자조건 시스템에어컨4대 중문 식세기등 옵션굿",
-        "link": "https://fin.land.naver.com/articles/2658600433"
-      },
-      {
-        "articleNo": "2658523449",
+        "articleNo": "2658857420",
         "realtor": "고덕퍼스트공인중개사사무소",
-        "feature": "무융자조건. 입주27년3월협의. 시스템에어컨. 주방넓은구조",
-        "link": "https://fin.land.naver.com/articles/2658523449"
+        "feature": "27년3월입주협의.무융자.방3개.중문.에어컨4대.식기세척기",
+        "link": "https://fin.land.naver.com/articles/2658857420"
       },
       {
         "articleNo": "2658504793",
@@ -53,10 +41,22 @@
         "link": "https://fin.land.naver.com/articles/2658504793"
       },
       {
+        "articleNo": "2658523449",
+        "realtor": "고덕퍼스트공인중개사사무소",
+        "feature": "무융자조건. 입주27년3월협의. 시스템에어컨. 주방넓은구조",
+        "link": "https://fin.land.naver.com/articles/2658523449"
+      },
+      {
         "articleNo": "2658550808",
         "realtor": "평택고덕대장부동산공인중개사사무소",
         "feature": "모든대출가능 무융자 버팀목가능 방3개 시스템에어컨4대 중문 식세기 등",
         "link": "https://fin.land.naver.com/articles/2658550808"
+      },
+      {
+        "articleNo": "2658600433",
+        "realtor": "고덕리슈빌공인중개사사무소",
+        "feature": "무융자조건 시스템에어컨4대 중문 식세기등 옵션굿",
+        "link": "https://fin.land.naver.com/articles/2658600433"
       },
       {
         "articleNo": "2658504607",
@@ -83,16 +83,16 @@
         "link": "https://fin.land.naver.com/articles/2658024936"
       },
       {
-        "articleNo": "2658143422",
-        "realtor": "프리마공인중개사사무소",
-        "feature": "27년3월입주협의 무융자 시에풀 중문 ",
-        "link": "https://fin.land.naver.com/articles/2658143422"
-      },
-      {
         "articleNo": "2658038924",
         "realtor": "평택고덕대장부동산공인중개사사무소",
         "feature": "무융자 버팀목가능 풀시스템에어컨 중문 등 호수품은아파트",
         "link": "https://fin.land.naver.com/articles/2658038924"
+      },
+      {
+        "articleNo": "2658143422",
+        "realtor": "프리마공인중개사사무소",
+        "feature": "27년3월입주협의 무융자 시에풀 중문 ",
+        "link": "https://fin.land.naver.com/articles/2658143422"
       },
       {
         "articleNo": "2657822939",
@@ -125,16 +125,16 @@
         "link": "https://fin.land.naver.com/articles/2657463445"
       },
       {
-        "articleNo": "2657251513",
-        "realtor": "평택고덕대장부동산공인중개사사무소",
-        "feature": "무융자전세 버팀목가능 27년3월 협의입주가능 풀시스템에어컨 중문 등",
-        "link": "https://fin.land.naver.com/articles/2657251513"
-      },
-      {
         "articleNo": "2657189025",
         "realtor": "풍경채호반중앙공인중개사사무소",
         "feature": "무융자안전전세. 에어컨4. 중문. 식세기. 방3",
         "link": "https://fin.land.naver.com/articles/2657189025"
+      },
+      {
+        "articleNo": "2657251513",
+        "realtor": "평택고덕대장부동산공인중개사사무소",
+        "feature": "무융자전세 버팀목가능 27년3월 협의입주가능 풀시스템에어컨 중문 등",
+        "link": "https://fin.land.naver.com/articles/2657251513"
       },
       {
         "articleNo": "2657071566",
@@ -181,8 +181,61 @@
     ],
     "moveInDate": "2027년 03월 초순 협의 가능",
     "loanInfo": "없음",
-    "changeStatus": "NEW",
-    "changeText": "신규 등록"
+    "changeStatus": "MAINTAINED",
+    "changeText": "유지"
+  },
+  {
+    "articleNo": "2658792909",
+    "complexName": "고덕국제신도시리슈빌레이크파크",
+    "complexId": 127109,
+    "shortName": "리슈빌레이크파크",
+    "tradeType": "B1",
+    "tradeName": "전세",
+    "dong": "1408",
+    "floorInfo": "저/20",
+    "targetFloor": "저",
+    "totalFloor": 20,
+    "isLowFloor": true,
+    "exclusiveArea": 84.84,
+    "supplyName": "110C",
+    "deposit": 400000000,
+    "monthlyRent": 0,
+    "managementFee": 250000,
+    "realtor": "고덕리슈빌공인중개사사무소",
+    "realtorCount": 4,
+    "feature": "무융자조건 로얄동 호수뷰 빠른 입주가능 시스템에어컨4대",
+    "confirmDate": "2026-10-31",
+    "directUrl": "https://fin.land.naver.com/articles/2658792909",
+    "duplicates": [
+      {
+        "articleNo": "2658792909",
+        "realtor": "고덕리슈빌공인중개사사무소",
+        "feature": "무융자조건 로얄동 호수뷰 빠른 입주가능 시스템에어컨4대",
+        "link": "https://fin.land.naver.com/articles/2658792909"
+      },
+      {
+        "articleNo": "2658749943",
+        "realtor": "써밋코너단지내공인중개사사무소",
+        "feature": "God33 무융자 호수뷰 시스템어어컨4  입주협의가능",
+        "link": "https://fin.land.naver.com/articles/2658749943"
+      },
+      {
+        "articleNo": "2658718997",
+        "realtor": "프리마공인중개사사무소",
+        "feature": "12월입주가능 호수뷰 시스템에어컨풀 상환조건 반려동물X",
+        "link": "https://fin.land.naver.com/articles/2658718997"
+      },
+      {
+        "articleNo": "2656595252",
+        "realtor": "풍경채스타공인중개사사무소",
+        "feature": "스타 추천 호수뷰 반전세 가능 무융자대출가능 시스템에어컨 등",
+        "link": "https://fin.land.naver.com/articles/2656595252"
+      }
+    ],
+    "moveInDate": "2026년 12월 하순 협의 가능",
+    "loanInfo": "정보 없음",
+    "changeStatus": "MAINTAINED",
+    "changeText": "유지"
   },
   {
     "articleNo": "2658857237",
@@ -220,10 +273,10 @@
         "link": "https://fin.land.naver.com/articles/2658523768"
       },
       {
-        "articleNo": "2658614383",
-        "realtor": "고덕365공인중개사사무소",
-        "feature": "고덕365. 무융자전세. 시스템에어컨4대. 중문. 협의입주",
-        "link": "https://fin.land.naver.com/articles/2658614383"
+        "articleNo": "2658676188",
+        "realtor": "고덕탑공인중개사사무소",
+        "feature": "호수공원 가깝고 조용한 리슈빌. 시스템에어컨. 상권이용편리",
+        "link": "https://fin.land.naver.com/articles/2658676188"
       },
       {
         "articleNo": "2658663408",
@@ -232,10 +285,10 @@
         "link": "https://fin.land.naver.com/articles/2658663408"
       },
       {
-        "articleNo": "2658676188",
-        "realtor": "고덕탑공인중개사사무소",
-        "feature": "호수공원 가깝고 조용한 리슈빌. 시스템에어컨. 상권이용편리",
-        "link": "https://fin.land.naver.com/articles/2658676188"
+        "articleNo": "2658614383",
+        "realtor": "고덕365공인중개사사무소",
+        "feature": "고덕365. 무융자전세. 시스템에어컨4대. 중문. 협의입주",
+        "link": "https://fin.land.naver.com/articles/2658614383"
       },
       {
         "articleNo": "2657858144",
@@ -246,8 +299,8 @@
     ],
     "moveInDate": "2026년 12월 하순 협의 가능",
     "loanInfo": "시세대비 30% 미만",
-    "changeStatus": "NEW",
-    "changeText": "신규 등록"
+    "changeStatus": "MAINTAINED",
+    "changeText": "유지"
   },
   {
     "articleNo": "2658791125",
@@ -315,59 +368,6 @@
     "changeText": "유지"
   },
   {
-    "articleNo": "2658792909",
-    "complexName": "고덕국제신도시리슈빌레이크파크",
-    "complexId": 127109,
-    "shortName": "리슈빌레이크파크",
-    "tradeType": "B1",
-    "tradeName": "전세",
-    "dong": "1408",
-    "floorInfo": "저/20",
-    "targetFloor": "저",
-    "totalFloor": 20,
-    "isLowFloor": true,
-    "exclusiveArea": 84.84,
-    "supplyName": "110C",
-    "deposit": 400000000,
-    "monthlyRent": 0,
-    "managementFee": 250000,
-    "realtor": "고덕리슈빌공인중개사사무소",
-    "realtorCount": 4,
-    "feature": "무융자조건 로얄동 호수뷰 빠른 입주가능 시스템에어컨4대",
-    "confirmDate": "2026-10-31",
-    "directUrl": "https://fin.land.naver.com/articles/2658792909",
-    "duplicates": [
-      {
-        "articleNo": "2658792909",
-        "realtor": "고덕리슈빌공인중개사사무소",
-        "feature": "무융자조건 로얄동 호수뷰 빠른 입주가능 시스템에어컨4대",
-        "link": "https://fin.land.naver.com/articles/2658792909"
-      },
-      {
-        "articleNo": "2658749943",
-        "realtor": "써밋코너단지내공인중개사사무소",
-        "feature": "God33 무융자 호수뷰 시스템어어컨4  입주협의가능",
-        "link": "https://fin.land.naver.com/articles/2658749943"
-      },
-      {
-        "articleNo": "2658718997",
-        "realtor": "프리마공인중개사사무소",
-        "feature": "12월입주가능 호수뷰 시스템에어컨풀 상환조건 반려동물X",
-        "link": "https://fin.land.naver.com/articles/2658718997"
-      },
-      {
-        "articleNo": "2656595252",
-        "realtor": "풍경채스타공인중개사사무소",
-        "feature": "스타 추천 호수뷰 반전세 가능 무융자대출가능 시스템에어컨 등",
-        "link": "https://fin.land.naver.com/articles/2656595252"
-      }
-    ],
-    "moveInDate": "2026년 12월 하순 협의 가능",
-    "loanInfo": "정보 없음",
-    "changeStatus": "MAINTAINED",
-    "changeText": "유지"
-  },
-  {
     "articleNo": "2658697148",
     "complexName": "고덕국제신도시리슈빌레이크파크",
     "complexId": 127109,
@@ -391,6 +391,34 @@
     "directUrl": "https://fin.land.naver.com/articles/2658697148",
     "duplicates": [],
     "moveInDate": "2026년 12월 01일 협의 가능",
+    "loanInfo": "정보 없음",
+    "changeStatus": "MAINTAINED",
+    "changeText": "유지"
+  },
+  {
+    "articleNo": "2658395118",
+    "complexName": "고덕국제신도시리슈빌레이크파크",
+    "complexId": 127109,
+    "shortName": "리슈빌레이크파크",
+    "tradeType": "B2",
+    "tradeName": "월세",
+    "dong": "1401",
+    "floorInfo": "저/20",
+    "targetFloor": "저",
+    "totalFloor": 20,
+    "isLowFloor": true,
+    "exclusiveArea": 84.97,
+    "supplyName": "110A",
+    "deposit": 2500000,
+    "monthlyRent": 2500000,
+    "managementFee": 300000,
+    "realtor": "프리마공인중개사사무소",
+    "realtorCount": 1,
+    "feature": "즉시입주가능 현장실사진 렌탈 가전가구세팅완료",
+    "confirmDate": "2026-10-29",
+    "directUrl": "https://fin.land.naver.com/articles/2658395118",
+    "duplicates": [],
+    "moveInDate": "즉시입주 협의 가능",
     "loanInfo": "정보 없음",
     "changeStatus": "MAINTAINED",
     "changeText": "유지"
@@ -437,34 +465,6 @@
         "link": "https://fin.land.naver.com/articles/2657702248"
       }
     ],
-    "moveInDate": "즉시입주 협의 가능",
-    "loanInfo": "정보 없음",
-    "changeStatus": "MAINTAINED",
-    "changeText": "유지"
-  },
-  {
-    "articleNo": "2658395118",
-    "complexName": "고덕국제신도시리슈빌레이크파크",
-    "complexId": 127109,
-    "shortName": "리슈빌레이크파크",
-    "tradeType": "B2",
-    "tradeName": "월세",
-    "dong": "1401",
-    "floorInfo": "저/20",
-    "targetFloor": "저",
-    "totalFloor": 20,
-    "isLowFloor": true,
-    "exclusiveArea": 84.97,
-    "supplyName": "110A",
-    "deposit": 2500000,
-    "monthlyRent": 2500000,
-    "managementFee": 300000,
-    "realtor": "프리마공인중개사사무소",
-    "realtorCount": 1,
-    "feature": "즉시입주가능 현장실사진 렌탈 가전가구세팅완료",
-    "confirmDate": "2026-10-29",
-    "directUrl": "https://fin.land.naver.com/articles/2658395118",
-    "duplicates": [],
     "moveInDate": "즉시입주 협의 가능",
     "loanInfo": "정보 없음",
     "changeStatus": "MAINTAINED",
@@ -600,6 +600,34 @@
     "loanInfo": "정보 없음",
     "changeStatus": "MAINTAINED",
     "changeText": "유지"
+  },
+  {
+    "articleNo": "2658871214",
+    "complexName": "고덕국제신도시리슈빌레이크파크",
+    "complexId": 127109,
+    "shortName": "리슈빌레이크파크",
+    "tradeType": "B1",
+    "tradeName": "전세",
+    "dong": "1402",
+    "floorInfo": "저/20",
+    "targetFloor": "저",
+    "totalFloor": 20,
+    "isLowFloor": true,
+    "exclusiveArea": 84.99,
+    "supplyName": "110B",
+    "deposit": 370000000,
+    "monthlyRent": 0,
+    "managementFee": 150000,
+    "realtor": "고덕퍼스트공인중개사사무소",
+    "realtorCount": 1,
+    "feature": "공동x.무융자조건.입주협의가능.방3개.시스템에어컨풀",
+    "confirmDate": "2026-10-31",
+    "directUrl": "https://fin.land.naver.com/articles/2658871214",
+    "duplicates": [],
+    "moveInDate": "즉시입주",
+    "loanInfo": "시세대비 30% 이상",
+    "changeStatus": "NEW",
+    "changeText": "신규 등록"
   },
   {
     "articleNo": "2657962096",
