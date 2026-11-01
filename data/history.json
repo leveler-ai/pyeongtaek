@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01 17:10",
+  "updatedAt": "2026-11-01 18:10",
   "articles": [
     {
       "articleNo": "2658934818",
@@ -43,10 +43,10 @@
           "link": "https://fin.land.naver.com/articles/2658767688"
         },
         {
-          "articleNo": "2658550808",
-          "realtor": "평택고덕대장부동산공인중개사사무소",
-          "feature": "모든대출가능 무융자 버팀목가능 방3개 시스템에어컨4대 중문 식세기 등",
-          "link": "https://fin.land.naver.com/articles/2658550808"
+          "articleNo": "2658600433",
+          "realtor": "고덕리슈빌공인중개사사무소",
+          "feature": "무융자조건 시스템에어컨4대 중문 식세기등 옵션굿",
+          "link": "https://fin.land.naver.com/articles/2658600433"
         },
         {
           "articleNo": "2658504793",
@@ -55,10 +55,10 @@
           "link": "https://fin.land.naver.com/articles/2658504793"
         },
         {
-          "articleNo": "2658600433",
-          "realtor": "고덕리슈빌공인중개사사무소",
-          "feature": "무융자조건 시스템에어컨4대 중문 식세기등 옵션굿",
-          "link": "https://fin.land.naver.com/articles/2658600433"
+          "articleNo": "2658550808",
+          "realtor": "평택고덕대장부동산공인중개사사무소",
+          "feature": "모든대출가능 무융자 버팀목가능 방3개 시스템에어컨4대 중문 식세기 등",
+          "link": "https://fin.land.naver.com/articles/2658550808"
         },
         {
           "articleNo": "2658523449",
@@ -240,77 +240,6 @@
       "changeText": "유지"
     },
     {
-      "articleNo": "2658857237",
-      "complexName": "고덕국제신도시리슈빌레이크파크",
-      "complexId": 127109,
-      "shortName": "리슈빌레이크파크",
-      "tradeType": "B1",
-      "tradeName": "전세",
-      "dong": "1408",
-      "floorInfo": "저/20",
-      "targetFloor": "저",
-      "totalFloor": 20,
-      "isLowFloor": true,
-      "exclusiveArea": 84.84,
-      "supplyName": "110C",
-      "deposit": 370000000,
-      "monthlyRent": 0,
-      "managementFee": 150000,
-      "realtor": "고덕퍼스트공인중개사사무소",
-      "realtorCount": 7,
-      "feature": "로얄동.호수조망.무융자조건.입주협의가능.방3개.에어컨4대.줄눈",
-      "confirmDate": "2026-10-31",
-      "directUrl": "https://fin.land.naver.com/articles/2658857237",
-      "duplicates": [
-        {
-          "articleNo": "2658857237",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "로얄동.호수조망.무융자조건.입주협의가능.방3개.에어컨4대.줄눈",
-          "link": "https://fin.land.naver.com/articles/2658857237"
-        },
-        {
-          "articleNo": "2658878582",
-          "realtor": "고덕365공인중개사사무소",
-          "feature": "고덕365. 무융자전세. 시스템에어컨4대. 중문. 협의입주",
-          "link": "https://fin.land.naver.com/articles/2658878582"
-        },
-        {
-          "articleNo": "2658523768",
-          "realtor": "고덕퍼스트공인중개사사무소",
-          "feature": "로얄동.호수조망.무융자조건.입주협의가능.방3개.에어컨4대",
-          "link": "https://fin.land.naver.com/articles/2658523768"
-        },
-        {
-          "articleNo": "2658676188",
-          "realtor": "고덕탑공인중개사사무소",
-          "feature": "호수공원 가깝고 조용한 리슈빌. 시스템에어컨. 상권이용편리",
-          "link": "https://fin.land.naver.com/articles/2658676188"
-        },
-        {
-          "articleNo": "2658614383",
-          "realtor": "고덕365공인중개사사무소",
-          "feature": "고덕365. 무융자전세. 시스템에어컨4대. 중문. 협의입주",
-          "link": "https://fin.land.naver.com/articles/2658614383"
-        },
-        {
-          "articleNo": "2658663408",
-          "realtor": "고덕탑원공인중개사사무소",
-          "feature": "입주협의가능 방3 에어컨4대   넓은구조 호수공원이용최적아파트",
-          "link": "https://fin.land.naver.com/articles/2658663408"
-        },
-        {
-          "articleNo": "2657858144",
-          "realtor": "고덕리슈빌공인중개사사무소",
-          "feature": "입주협의 무융자조건 로얄동 호수뷰 시스템에어컨4대",
-          "link": "https://fin.land.naver.com/articles/2657858144"
-        }
-      ],
-      "moveInDate": "2026년 12월 하순 협의 가능",
-      "loanInfo": "시세대비 30% 미만",
-      "changeStatus": "MAINTAINED",
-      "changeText": "유지"
-    },
-    {
       "articleNo": "2658791125",
       "complexName": "고덕국제신도시리슈빌레이크파크",
       "complexId": 127109,
@@ -376,32 +305,103 @@
       "changeText": "유지"
     },
     {
-      "articleNo": "2658913066",
+      "articleNo": "2658857237",
       "complexName": "고덕국제신도시리슈빌레이크파크",
       "complexId": 127109,
       "shortName": "리슈빌레이크파크",
-      "tradeType": "B2",
-      "tradeName": "월세",
-      "dong": "1405",
+      "tradeType": "B1",
+      "tradeName": "전세",
+      "dong": "1408",
+      "floorInfo": "저/20",
+      "targetFloor": "저",
+      "totalFloor": 20,
+      "isLowFloor": true,
+      "exclusiveArea": 84.84,
+      "supplyName": "110C",
+      "deposit": 370000000,
+      "monthlyRent": 0,
+      "managementFee": 150000,
+      "realtor": "고덕퍼스트공인중개사사무소",
+      "realtorCount": 7,
+      "feature": "로얄동.호수조망.무융자조건.입주협의가능.방3개.에어컨4대.줄눈",
+      "confirmDate": "2026-10-31",
+      "directUrl": "https://fin.land.naver.com/articles/2658857237",
+      "duplicates": [
+        {
+          "articleNo": "2658857237",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "로얄동.호수조망.무융자조건.입주협의가능.방3개.에어컨4대.줄눈",
+          "link": "https://fin.land.naver.com/articles/2658857237"
+        },
+        {
+          "articleNo": "2658878582",
+          "realtor": "고덕365공인중개사사무소",
+          "feature": "고덕365. 무융자전세. 시스템에어컨4대. 중문. 협의입주",
+          "link": "https://fin.land.naver.com/articles/2658878582"
+        },
+        {
+          "articleNo": "2658523768",
+          "realtor": "고덕퍼스트공인중개사사무소",
+          "feature": "로얄동.호수조망.무융자조건.입주협의가능.방3개.에어컨4대",
+          "link": "https://fin.land.naver.com/articles/2658523768"
+        },
+        {
+          "articleNo": "2658676188",
+          "realtor": "고덕탑공인중개사사무소",
+          "feature": "호수공원 가깝고 조용한 리슈빌. 시스템에어컨. 상권이용편리",
+          "link": "https://fin.land.naver.com/articles/2658676188"
+        },
+        {
+          "articleNo": "2658663408",
+          "realtor": "고덕탑원공인중개사사무소",
+          "feature": "입주협의가능 방3 에어컨4대   넓은구조 호수공원이용최적아파트",
+          "link": "https://fin.land.naver.com/articles/2658663408"
+        },
+        {
+          "articleNo": "2658614383",
+          "realtor": "고덕365공인중개사사무소",
+          "feature": "고덕365. 무융자전세. 시스템에어컨4대. 중문. 협의입주",
+          "link": "https://fin.land.naver.com/articles/2658614383"
+        },
+        {
+          "articleNo": "2657858144",
+          "realtor": "고덕리슈빌공인중개사사무소",
+          "feature": "입주협의 무융자조건 로얄동 호수뷰 시스템에어컨4대",
+          "link": "https://fin.land.naver.com/articles/2657858144"
+        }
+      ],
+      "moveInDate": "2026년 12월 하순 협의 가능",
+      "loanInfo": "시세대비 30% 미만",
+      "changeStatus": "MAINTAINED",
+      "changeText": "유지"
+    },
+    {
+      "articleNo": "2658943084",
+      "complexName": "고덕국제신도시리슈빌레이크파크",
+      "complexId": 127109,
+      "shortName": "리슈빌레이크파크",
+      "tradeType": "B1",
+      "tradeName": "전세",
+      "dong": "1407",
       "floorInfo": "고/20",
       "targetFloor": "고",
       "totalFloor": 20,
       "isLowFloor": false,
-      "exclusiveArea": 84.97,
-      "supplyName": "110A",
-      "deposit": 20000000,
-      "monthlyRent": 1800000,
+      "exclusiveArea": 84.99,
+      "supplyName": "110B",
+      "deposit": 350000000,
+      "monthlyRent": 0,
       "managementFee": 150000,
       "realtor": "(유)현명한부동산중개법인",
       "realtorCount": 1,
-      "feature": "인덕션,시스템에어컨3대,중문,김치냉장고",
-      "confirmDate": "2026-10-31",
-      "directUrl": "https://fin.land.naver.com/articles/2658913066",
+      "feature": "추천매물 옵션  시스템에어컨 5대 ,인덕션, 확 트인 전망 아주 좋아요",
+      "confirmDate": "2026-11-01",
+      "directUrl": "https://fin.land.naver.com/articles/2658943084",
       "duplicates": [],
-      "moveInDate": "즉시입주",
+      "moveInDate": "즉시입주 협의 가능",
       "loanInfo": "정보 없음",
-      "changeStatus": "MAINTAINED",
-      "changeText": "유지"
+      "changeStatus": "NEW",
+      "changeText": "신규 등록"
     },
     {
       "articleNo": "2658697148",
@@ -427,6 +427,34 @@
       "directUrl": "https://fin.land.naver.com/articles/2658697148",
       "duplicates": [],
       "moveInDate": "2026년 12월 01일 협의 가능",
+      "loanInfo": "정보 없음",
+      "changeStatus": "MAINTAINED",
+      "changeText": "유지"
+    },
+    {
+      "articleNo": "2658913066",
+      "complexName": "고덕국제신도시리슈빌레이크파크",
+      "complexId": 127109,
+      "shortName": "리슈빌레이크파크",
+      "tradeType": "B2",
+      "tradeName": "월세",
+      "dong": "1405",
+      "floorInfo": "고/20",
+      "targetFloor": "고",
+      "totalFloor": 20,
+      "isLowFloor": false,
+      "exclusiveArea": 84.97,
+      "supplyName": "110A",
+      "deposit": 20000000,
+      "monthlyRent": 1800000,
+      "managementFee": 150000,
+      "realtor": "(유)현명한부동산중개법인",
+      "realtorCount": 1,
+      "feature": "인덕션,시스템에어컨3대,중문,김치냉장고",
+      "confirmDate": "2026-10-31",
+      "directUrl": "https://fin.land.naver.com/articles/2658913066",
+      "duplicates": [],
+      "moveInDate": "즉시입주",
       "loanInfo": "정보 없음",
       "changeStatus": "MAINTAINED",
       "changeText": "유지"
@@ -633,16 +661,16 @@
       "directUrl": "https://fin.land.naver.com/articles/2658909536",
       "duplicates": [
         {
-          "articleNo": "2658760098",
-          "realtor": "고덕탑원공인중개사사무소",
-          "feature": " 입주협의시에4대 중문 집상태깨끗 ",
-          "link": "https://fin.land.naver.com/articles/2658760098"
-        },
-        {
           "articleNo": "2658909536",
           "realtor": "고덕탑공인중개사사무소",
           "feature": "",
           "link": "https://fin.land.naver.com/articles/2658909536"
+        },
+        {
+          "articleNo": "2658760098",
+          "realtor": "고덕탑원공인중개사사무소",
+          "feature": " 입주협의시에4대 중문 집상태깨끗 ",
+          "link": "https://fin.land.naver.com/articles/2658760098"
         }
       ],
       "moveInDate": "즉시입주",
@@ -786,16 +814,16 @@
       "directUrl": "https://fin.land.naver.com/articles/2658882758",
       "duplicates": [
         {
-          "articleNo": "2658849443",
-          "realtor": "더샵하나공인중개사사무소",
-          "feature": "1월29일, 시에2대, 융자상환조건,주차편리",
-          "link": "https://fin.land.naver.com/articles/2658849443"
-        },
-        {
           "articleNo": "2658882758",
           "realtor": "지제역더샵영신부동산공인중개사사무소",
           "feature": "1월29일시에2대 집상태굿 주차지하2층동 협의입주가능동간넓음",
           "link": "https://fin.land.naver.com/articles/2658882758"
+        },
+        {
+          "articleNo": "2658849443",
+          "realtor": "더샵하나공인중개사사무소",
+          "feature": "1월29일, 시에2대, 융자상환조건,주차편리",
+          "link": "https://fin.land.naver.com/articles/2658849443"
         },
         {
           "articleNo": "2658543671",
@@ -931,5 +959,20 @@
       "changeText": "유지"
     }
   ],
-  "lastEvents": []
+  "lastEvents": [
+    {
+      "type": "NEW",
+      "time": "2026-11-01 18:10",
+      "complexName": "고덕국제신도시리슈빌레이크파크",
+      "tradeName": "전세",
+      "dong": "1407",
+      "floorInfo": "고/20",
+      "exclusiveArea": 84.99,
+      "deposit": 350000000,
+      "monthlyRent": 0,
+      "articleNo": "2658943084",
+      "directUrl": "https://fin.land.naver.com/articles/2658943084",
+      "desc": "새로운 전세 매물이 등록되었습니다."
+    }
+  ]
 }
